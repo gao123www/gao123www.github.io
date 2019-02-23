@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[git常用指令]]></title>
+    <url>%2F2019%2F02%2F23%2Fgit%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[git常用指令1.基本指令git init &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; —— 新建git仓库git add 文件/文件夹 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; —— 将文件添加到缓存区中git add -A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; — 添加所有内容到缓存区中git stutas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——— 查看git状态git commit -m ‘提交信息’ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—— 将缓存区中的内容全部提交到git本地仓库中 git log &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——- 查看提交日志 git reset - - hard HEAD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—— 让工作目录中的内容和仓库中的内容保持一致git reset --hard HEAD^ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—— 回到上一个版本git reset - - hard 版本号 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—— 回到指定的版本git checkout - - 文件名 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; —— 从暂存区中恢复工作目录中的内容(让工作区中的指定文件，回到上次提交的时候的状态) git clone &lt;url&gt; - 将服务器上的项目(仓库)克隆 (使用https地址需要输入密码，使用ssh地址需要添加公钥) git remote add origin 地址 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—– 关联远程仓库(只需要关联一次) git push [-u] origin master &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—– 提交(-u在第一次提交分之的时候才用) 2.分之管理创建仓库会默认给我们创建一个master分之,这个分之一般作为提交和发布分之;开发一般会自己创建一个develop分之，用来开发和测试;多人协作的时候还可能根据不同的人或者(不同的功能)创建不同的分之，用来独立开发 常见分之： master(主要是合并develop), develop(主要合并下面的其他分支), 功能/人员分之(开发) git branch [-a] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - 查看分之git branch 分之名 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 创建分之git checkout 分支名 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 切换分之git checkout -b 分之名 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - 切换并创建新的分之git diff 分之1 分之2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 查看两个分之之间的差异git merge 分之名 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 让当前分之和指定分之进行合并 注意: 切换分之、push、pull，这些操作前要保证工作区是clean 怎么避免冲突： 不要发生多个分之对同一个文件在同一个版本下进行修改(和同伴确认和商量)]]></content>
+      <tags>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Nginx服务器]]></title>
+    <url>%2F2019%2F02%2F23%2FNginx%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[Nginx服务器1.阿里云添加80端口阿里云上默认只有一个22端口用来做远程登录，如果希望在阿里云上安装支持http请求的nginx服务器，需要给阿里云添加80端口 2. 安装nginxa) 添加nginx存储库 1yum install epel-release b) 安装nginx 1234 yum install nginx``` c) 运行nginx Nginx不会自行启动。要运行Nginx systemctl start nginx 12nginx的运行命令: systemctl status nginx 查看nginx的状态 systemctl start/stop/enable/disable nginx 启动/关闭/设置开机启动/禁止开机启动 12d) 系统启动时启动Nginx systemctl enable nginx 123456789101112131415e）如果您正在运行防火墙，请运行以下命令以允许HTTP和HTTPS通信： sudo firewall-cmd --permanent --zone=public --add-service=http sudo firewall-cmd --permanent --zone=public --add-service=httpssudo firewall-cmd --reload ### 3.nginx目录共享配置 a) 在contOS目录中确定一个需要共享的文件夹，例如： /home/yuting b) 打开 etc/nginx/nginx.conf 文件，设置server #共享设置 - 在浏览器中输入服务器ip地址，会展示共享目录的文件列表 root /home/yuting; location / { autoindex on; autoindex_exact_size on; autoindex_localtime on; } 12除了可以共享文件，还可以自定义页面 #自定义服务器页面 location / { root /home/yuting; index index.html index.htm; } ` 注意： 如果出现权限问题，可以修改目录的权限 ssh密钥认证1.在主机和从机上执行：ssh-keygen 2.在从机上执行: scp id_rsa.pub root@主机地址:~/.ssh/master.pub(上面这条指令是将从机上的 id_rsa.pub文件拷贝传递给到主机的.ssh文件夹下，并且命名为’master.pub’) 3.在主机中的.ssh文件夹中创建authorized_keys文件： touch authorized_keys 4.修改文件authorized_keys的权限: chmod 600 authorized_keys 5.将master.pub放进authorized_keys文件中: cat master.pub &gt;&gt; authorized_keys 6.在操作主机的时候，需要主机能够自己免密访问自己就将自己的公钥放在自己的authorized_keys文件中]]></content>
+      <tags>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL配置]]></title>
+    <url>%2F2019%2F02%2F23%2FMySQL%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[MySQL配置1. 下载MySQL源安装包: wget http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm2. 安装MySQL源: yum localinstall mysql57-community-release-el7-8.noarch.rpm3. 安装MySQL: yum install mysql-community-server4. 设置开启启动MySQL服务: systemctl enable mysqld5. 启动/重启MySQL服务：systemctl restart mysqld6. 查看MySQL初始密码：grep ‘A temporary password’ /var/log/mysqld.log7. 更改MySQL密码：mysqladmin -u root -p’旧密码’ password ‘新密码’这里更改密码出了问题，更改失败，这是因为密码太过简单的原因。有两个接解决方法： 方法一：把密码设置复杂点（这是最直接的方法） 方法二：关闭mysql密码强度验证(validate_password) 编辑配置文件：vim /etc/my.cnf， 增加这么一行validate_password=off 编辑后重启mysql服务：systemctl restart mysqld 8. 设置mysql能够远程访问:a. 登录进MySQL: `mysql -uroot -p密码` b. 增加一个用户给予访问权限: `grant all privileges on *.* to &apos;root&apos;@&apos;ip地址&apos; identified by &apos;密码&apos; with grant option;` c. 刷新权限：`flush privileges;­`]]></content>
+      <tags>
+        <tag>服务器安装及配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo博客搭建]]></title>
+    <url>%2F2019%2F02%2F23%2FHexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[Hexo博客搭建1. 搭建博客使用hexo搭建个人博客前需要先在自己的电脑上装好git和node.js 首先在自己的电脑上创建一个空的文件夹’Hexo’ 在gitbash中终端中通过cd指令进入到刚才创建的文件夹中 输入指令 npm install -g hexo 安装Hexo 输入指令 hexo init 进行初始化 依次输入指令npm install hexo server 启动服务器 博客内容发生改变后可以通过hexo clean hexo generate hexo deploy hexo server刷新后重新启动 2. 部署博客 在github上创建一个空的仓库，仓库名： 用户名.github.io 修改博客本地仓库中的配置文件（Hexo目录下的_config.yml文件）,在文件末尾添加一下选中内容 使用git部署, 输入指令npm install hexo-deployer-git --save 输入指令hexo clean hexo generate hexo deploy 对博客进行提交]]></content>
+      <tags>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux指令系统]]></title>
+    <url>%2F2019%2F02%2F20%2FLinux%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%2F</url>
+    <content type="text"><![CDATA[1.连接云服务器Linux指令系统： 命令名称 [命名参数] [命令对象] 一、日常操作1.cd指令 - 进入指定文件夹cd 目录 - 进入指定目录(也可以是文件夹对应的路径) ~相对路径 — 绝对路径 cd .. - 返回上层目录cd ~ - 回到根目录 ls指令 - 查看当前目录中的内容lsls -l/-lhls -a - 隐藏文件也一起显示ls -R - 递归显示所有内容ls -S/-t - 按大小/时间排序 3.pwd指令 - 显示当前完整目录pwd 4.文件操作指令touch 文件名 - 新建文件cat 文件名 - 查看文件内容 rm 文件名 - 删除文件rm - r 目录 - 删除文件夹 cp 文件名1 文件名2 - 将文件1中的内容拷贝到文件2中cp -r 文件名/目录名 目录2 - 将文件/目录拷贝到目录2中 mv 文件名1 文件名2 - 将文件1中的内容移动到文件2中 ,并且删除文件1（文件重命名）mv 文件名1 文件目录 - 将文件1移动到指定目录中 (注意：cp/mv/rm 后面可以跟： -i询问 -f强制 -n不覆盖) mkdir 目录名 - 新建文件夹mkdir -p a/b/c - 按层级创建a,b,c三个文件夹mkdir -p a/{b,c}/{d,e,f} -同一层级常见多个 rmdir 目录名 - 删除指定空目录 7.history - 显示历史指令记录bashrc 配置显示时间：export HISTTIMEFORMAT=”[%y‐%m‐%d_%T] “修改bashrc 后使其生效: source ~/.bashrc 或 . .bashrc 6.链接ln -s 源路径 目标路径 - 给源路径对应的文件在目标路径下创建一个软链接(可以看成是快捷键)ln 源路径 目标路径 - 给源路径对应的文件在目标路径下创建一个硬链接 8.快捷键ctr + f - 前进一个字符ctr + b - 后退一个字符ctr + a - 回到行首ctr + e - 回到行尾ctr + w - 向左删除一个单词ctr + u - 向左删除全部ctr + k - 向右删除全部ctr + y - 粘贴上次删除的内容ctr + l - 清屏 二、进程相关指令1.ps指令ps - 进程状态ps -aux 或者 ps ex - 查看进程ps -aux|grep 进程名 - 查看指定进程psgrep 进程名 2.top指令top - 动态监控进程top -p PID1,PID2,…. - 动态监控指定进程 3.free指令free -单位 - 以指定单位查看内存 4.kill指令 kill 进程号 - 杀死指定的进程kill -1/-9/-15 - -1(HUP)不间断重启，-9(KILL)强制杀死进程,-15(TERM)正常终止进程pkill 进程名 - 按名字处理进程killall 进程名 - 处理名字匹配的进程 uptime - 查看系统状态 三、权限管理1.user和group users -查看当前用户groupadd 分组名 - 添加分组useradd ‐G 分组列表 ‐m ‐s /bin/bash 用户名 - 创建一个用户添加到指定的分组中usermod -G 分组列表 用户名 - 修改分组sudo - 以管理员执行其他程序su - 用户名]]></content>
+      <tags>
+        <tag>系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F02%2F20%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <tags>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+</search>

@@ -10,6 +10,8 @@
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 <meta name="theme-color" content="#222">
 
 
@@ -73,6 +75,8 @@
 
 
 
+
+  <link rel="alternate" href="/atom.xml" title="往事随风" type="application/atom+xml">
 
 
 
@@ -160,7 +164,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">爱好吃饭睡觉</p>
+        <p class="site-subtitle">以梦为马，剑仗天涯</p>
       
   </div>
 
@@ -232,10 +236,585 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/git常用指令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="往事随风">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550763155730&di=ef8c2a5b21e76719a2cee4e81720fca3&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F012f4a582436d2a84a0e282ba6db98.jpg%401280w_1l_2o_100sh.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="往事随风">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/23/git常用指令/" itemprop="url">git常用指令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-23T14:44:09+08:00">
+                2019-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="git常用指令"><a href="#git常用指令" class="headerlink" title="git常用指令"></a>git常用指令</h1><h3 id="1-基本指令"><a href="#1-基本指令" class="headerlink" title="1.基本指令"></a>1.基本指令</h3><p><code>git init</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ——  新建git仓库<br><code>git add 文件/文件夹</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ——  将文件添加到缓存区中<br><code>git add -A</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; — 添加所有内容到缓存区中<br><code>git stutas</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;———    查看git状态<br><code>git commit -m  ‘提交信息’</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——  将缓存区中的内容全部提交到git本地仓库中  </p>
+<p><code>git log</code>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——-    查看提交日志  </p>
+<p><code>git reset  - - hard   HEAD</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——   让工作目录中的内容和仓库中的内容保持一致<br><code>git reset  --hard HEAD^</code>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——  回到上一个版本<br><code>git  reset  - - hard 版本号</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——  回到指定的版本<br><code>git checkout  - -  文件名</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ——  从暂存区中恢复工作目录中的内容(让工作区中的指定文件，回到上次提交的时候的状态)  </p>
+<p><code>git clone &lt;url&gt;</code> - 将服务器上的项目(仓库)克隆 (使用https地址需要输入密码，使用ssh地址需要添加公钥)  </p>
+<p><code>git remote add origin 地址</code>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—– 关联远程仓库(只需要关联一次)</p>
+<p><code>git push [-u] origin master</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—– 提交(-u在第一次提交分之的时候才用)  </p>
+<h3 id="2-分之管理"><a href="#2-分之管理" class="headerlink" title="2.分之管理"></a>2.分之管理</h3><p>创建仓库会默认给我们创建一个master分之,这个分之一般作为提交和发布分之;开发一般会自己创建一个develop分之，用来开发和测试;多人协作的时候还可能根据不同的人或者(不同的功能)创建不同的分之，用来独立开发  </p>
+<p>常见分之： master(主要是合并develop), develop(主要合并下面的其他分支), 功能/人员分之(开发)  </p>
+<p><code>git branch [-a]</code>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        - 查看分之<br><code>git branch 分之名</code>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 创建分之<br><code>git checkout   分支名</code>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-   切换分之<br><code>git checkout -b 分之名</code>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    - 切换并创建新的分之<br><code>git diff    分之1  分之2</code>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 查看两个分之之间的差异<br><code>git merge 分之名</code>            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 让当前分之和指定分之进行合并     </p>
+<p>注意: 切换分之、push、pull，这些操作前要保证工作区是clean  </p>
+<p>怎么避免冲突：  不要发生多个分之对同一个文件在同一个版本下进行修改(和同伴确认和商量)</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+    <div>
+      
+</div>
+    <div>
+      
+  </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/Nginx服务器安装/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="往事随风">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550763155730&di=ef8c2a5b21e76719a2cee4e81720fca3&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F012f4a582436d2a84a0e282ba6db98.jpg%401280w_1l_2o_100sh.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="往事随风">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/23/Nginx服务器安装/" itemprop="url">Nginx服务器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-23T10:17:36+08:00">
+                2019-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Nginx服务器"><a href="#Nginx服务器" class="headerlink" title="Nginx服务器"></a>Nginx服务器</h1><h3 id="1-阿里云添加80端口"><a href="#1-阿里云添加80端口" class="headerlink" title="1.阿里云添加80端口"></a>1.阿里云添加80端口</h3><p>阿里云上默认只有一个22端口用来做远程登录，如果希望在阿里云上安装支持http请求的nginx服务器，需要给阿里云添加80端口</p>
+<p><img src="/2019/02/23/Nginx服务器安装/./source/imges/aliyun0.png" alt="打开安全组设置"><br><img src="/2019/02/23/Nginx服务器安装/imges/aliyun2.png" alt><br><img src="/2019/02/23/Nginx服务器安装/imges/aliyun3.png" alt><br><img src="/2019/02/23/Nginx服务器安装/imges/aliyun4.png" alt></p>
+<h3 id="2-安装nginx"><a href="#2-安装nginx" class="headerlink" title="2. 安装nginx"></a>2. 安装nginx</h3><p>a) 添加nginx存储库  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release</span><br></pre></td></tr></table></figure>
+<p>b) 安装nginx</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">	yum install nginx</span><br><span class="line">```  </span><br><span class="line">c) 运行nginx  </span><br><span class="line">Nginx不会自行启动。要运行Nginx</span><br></pre></td></tr></table></figure>
+<pre><code>systemctl start nginx
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">nginx的运行命令:</span><br></pre></td></tr></table></figure>
+<pre><code>systemctl status nginx 查看nginx的状态  
+systemctl start/stop/enable/disable nginx 启动/关闭/设置开机启动/禁止开机启动  
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">d) 系统启动时启动Nginx</span><br></pre></td></tr></table></figure>
+<pre><code>systemctl enable nginx
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">e）如果您正在运行防火墙，请运行以下命令以允许HTTP和HTTPS通信：   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sudo firewall-cmd --permanent --zone=public --add-service=http </span><br><span class="line"></span><br><span class="line">sudo firewall-cmd --permanent --zone=public --add-service=https</span><br><span class="line"></span><br><span class="line">sudo firewall-cmd --reload</span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 3.nginx目录共享配置  </span><br><span class="line">a) 在contOS目录中确定一个需要共享的文件夹，例如： /home/yuting  </span><br><span class="line">b) 打开 etc/nginx/nginx.conf 文件，设置server</span><br></pre></td></tr></table></figure>
+<pre><code>#共享设置 - 在浏览器中输入服务器ip地址，会展示共享目录的文件列表
+root /home/yuting;
+location / {
+       autoindex on;
+       autoindex_exact_size on;
+       autoindex_localtime on;
+}  
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">除了可以共享文件，还可以自定义页面</span><br></pre></td></tr></table></figure>
+<pre><code>#自定义服务器页面
+location / {
+        root /home/yuting;
+        index index.html index.htm;
+}
+</code></pre><p><code>`</code></p>
+<p>注意： 如果出现权限问题，可以修改目录的权限  </p>
+<h1 id="ssh密钥认证"><a href="#ssh密钥认证" class="headerlink" title="ssh密钥认证"></a>ssh密钥认证</h1><p>1.在主机和从机上执行：<code>ssh-keygen</code></p>
+<p>2.在从机上执行:  <code>scp  id_rsa.pub  root@主机地址:~/.ssh/master.pub</code><br>(上面这条指令是将从机上的 id_rsa.pub文件拷贝传递给到主机的.ssh文件夹下，并且命名为’master.pub’)</p>
+<p>3.在主机中的.ssh文件夹中创建authorized_keys文件： <code>touch authorized_keys</code> </p>
+<p>4.修改文件authorized_keys的权限: <code>chmod 600  authorized_keys</code>  </p>
+<p>5.将master.pub放进authorized_keys文件中:  <code>cat master.pub &gt;&gt;  authorized_keys</code></p>
+<p>6.在操作主机的时候，需要主机能够自己免密访问自己就将自己的公钥放在自己的authorized_keys文件中</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+    <div>
+      
+</div>
+    <div>
+      
+  </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/MySQL配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="往事随风">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550763155730&di=ef8c2a5b21e76719a2cee4e81720fca3&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F012f4a582436d2a84a0e282ba6db98.jpg%401280w_1l_2o_100sh.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="往事随风">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/23/MySQL配置/" itemprop="url">MySQL配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-23T10:11:56+08:00">
+                2019-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="MySQL配置"><a href="#MySQL配置" class="headerlink" title="MySQL配置"></a>MySQL配置</h1><h3 id="1-下载MySQL源安装包-wget-http-dev-mysql-com-get-mysql57-community-release-el7-8-noarch-rpm"><a href="#1-下载MySQL源安装包-wget-http-dev-mysql-com-get-mysql57-community-release-el7-8-noarch-rpm" class="headerlink" title="1. 下载MySQL源安装包: wget http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm"></a>1. 下载MySQL源安装包: <code>wget http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm</code></h3><h3 id="2-安装MySQL源-yum-localinstall-mysql57-community-release-el7-8-noarch-rpm"><a href="#2-安装MySQL源-yum-localinstall-mysql57-community-release-el7-8-noarch-rpm" class="headerlink" title="2. 安装MySQL源: yum localinstall mysql57-community-release-el7-8.noarch.rpm"></a>2. 安装MySQL源: <code>yum localinstall mysql57-community-release-el7-8.noarch.rpm</code></h3><h3 id="3-安装MySQL-yum-install-mysql-community-server"><a href="#3-安装MySQL-yum-install-mysql-community-server" class="headerlink" title="3. 安装MySQL:  yum install mysql-community-server"></a>3. 安装MySQL:  <code>yum install mysql-community-server</code></h3><h3 id="4-设置开启启动MySQL服务-systemctl-enable-mysqld"><a href="#4-设置开启启动MySQL服务-systemctl-enable-mysqld" class="headerlink" title="4. 设置开启启动MySQL服务: systemctl enable mysqld"></a>4. 设置开启启动MySQL服务: <code>systemctl enable mysqld</code></h3><h3 id="5-启动-重启MySQL服务：systemctl-restart-mysqld"><a href="#5-启动-重启MySQL服务：systemctl-restart-mysqld" class="headerlink" title="5. 启动/重启MySQL服务：systemctl restart mysqld"></a>5. 启动/重启MySQL服务：systemctl restart mysqld</h3><h3 id="6-查看MySQL初始密码：grep-‘A-temporary-password’-var-log-mysqld-log"><a href="#6-查看MySQL初始密码：grep-‘A-temporary-password’-var-log-mysqld-log" class="headerlink" title="6. 查看MySQL初始密码：grep ‘A temporary password’ /var/log/mysqld.log"></a>6. 查看MySQL初始密码：grep ‘A temporary password’ /var/log/mysqld.log</h3><h3 id="7-更改MySQL密码：mysqladmin-u-root-p’旧密码’-password-‘新密码’"><a href="#7-更改MySQL密码：mysqladmin-u-root-p’旧密码’-password-‘新密码’" class="headerlink" title="7. 更改MySQL密码：mysqladmin -u root -p’旧密码’ password ‘新密码’"></a>7. 更改MySQL密码：mysqladmin -u root -p’旧密码’ password ‘新密码’</h3><pre><code>这里更改密码出了问题，更改失败，这是因为密码太过简单的原因。有两个接解决方法：
+</code></pre><p>　　　　方法一：把密码设置复杂点（这是最直接的方法）</p>
+<p>　　　　方法二：关闭mysql密码强度验证(validate_password)</p>
+<p>　　　　　　　　编辑配置文件：<code>vim /etc/my.cnf</code>， 增加这么一行validate_password=off</p>
+<p>　　　　　　　　编辑后重启mysql服务：<code>systemctl restart mysqld</code>  
+　　　　　　　　  
+　　　　　　　　  </p>
+<h3 id="8-设置mysql能够远程访问"><a href="#8-设置mysql能够远程访问" class="headerlink" title="8. 设置mysql能够远程访问:"></a>8. 设置mysql能够远程访问:</h3><pre><code>a. 登录进MySQL:  `mysql -uroot -p密码`  
+b. 增加一个用户给予访问权限: `grant all privileges on *.* to &apos;root&apos;@&apos;ip地址&apos; identified by &apos;密码&apos; with grant option;`  
+c. 刷新权限：`flush privileges;­`  
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+    <div>
+      
+</div>
+    <div>
+      
+  </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/Hexo博客搭建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="往事随风">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550763155730&di=ef8c2a5b21e76719a2cee4e81720fca3&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F012f4a582436d2a84a0e282ba6db98.jpg%401280w_1l_2o_100sh.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="往事随风">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/23/Hexo博客搭建/" itemprop="url">Hexo博客搭建</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-23T09:54:06+08:00">
+                2019-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Hexo博客搭建"><a href="#Hexo博客搭建" class="headerlink" title="Hexo博客搭建"></a>Hexo博客搭建</h1><h3 id="1-搭建博客"><a href="#1-搭建博客" class="headerlink" title="1. 搭建博客"></a>1. 搭建博客</h3><p>使用hexo搭建个人博客前需要先在自己的电脑上装好git和node.js   </p>
+<ol>
+<li>首先在自己的电脑上创建一个空的文件夹’Hexo’  </li>
+<li>在gitbash中终端中通过<code>cd</code>指令进入到刚才创建的文件夹中   </li>
+<li>输入指令 <code>npm install -g hexo</code> 安装Hexo  </li>
+<li>输入指令 <code>hexo init</code> 进行初始化  </li>
+<li>依次输入指令<code>npm install</code> <code>hexo server</code> 启动服务器<br> 博客内容发生改变后可以通过<code>hexo clean</code> <code>hexo generate</code> <code>hexo deploy</code> <code>hexo server</code>刷新后重新启动    </li>
+</ol>
+<h3 id="2-部署博客"><a href="#2-部署博客" class="headerlink" title="2. 部署博客"></a>2. 部署博客</h3><ol>
+<li>在github上创建一个空的仓库，仓库名： <code>用户名.github.io</code>  </li>
+<li><p>修改博客本地仓库中的配置文件（Hexo目录下的_config.yml文件）,在文件末尾添加一下选中内容<br><img src="/2019/02/23/Hexo博客搭建/Users/yuting/Desktop/Hexo/image1.png" alt>  </p>
+</li>
+<li><p>使用git部署, 输入指令<code>npm install hexo-deployer-git --save</code>  </p>
+</li>
+<li>输入指令<code>hexo clean</code> <code>hexo generate</code> <code>hexo deploy</code> 对博客进行提交</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+    <div>
+      
+</div>
+    <div>
+      
+  </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/Linux指令系统/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我的博客">
+      <meta itemprop="name" content="往事随风">
       <meta itemprop="description" content>
       <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550763155730&di=ef8c2a5b21e76719a2cee4e81720fca3&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F012f4a582436d2a84a0e282ba6db98.jpg%401280w_1l_2o_100sh.jpg">
     </span>
@@ -303,10 +882,9 @@
       
         
           
-            <p>##1.连接云服务器</p>
-<p>Linux指令系统：</p>
+            <h1 id="1-连接云服务器"><a href="#1-连接云服务器" class="headerlink" title="1.连接云服务器"></a>1.连接云服务器</h1><p>Linux指令系统：</p>
 <p>命令名称 [命名参数] [命令对象]</p>
-<p>一、日常操作<br>1.cd指令       - 进入指定文件夹<br>cd  目录     - 进入指定目录(也可以是文件夹对应的路径)<br>               ~相对路径 — 绝对路径</p>
+<h3 id="一、日常操作"><a href="#一、日常操作" class="headerlink" title="一、日常操作"></a>一、日常操作</h3><p>1.cd指令       - 进入指定文件夹<br>cd  目录     - 进入指定目录(也可以是文件夹对应的路径)<br>               ~相对路径 — 绝对路径</p>
 <p>cd  ..       - 返回上层目录<br>cd  ~    - 回到根目录</p>
 <ol start="2">
 <li>ls指令        - 查看当前目录中的内容<br>ls<br>ls  -l/-lh<br>ls -a               - 隐藏文件也一起显示<br>ls -R            - 递归显示所有内容<br>ls -S/-t            - 按大小/时间排序</li>
@@ -322,13 +900,13 @@
 <p>7.history        - 显示历史指令记录<br>bashrc 配置显示时间：export  HISTTIMEFORMAT=”[%y‐%m‐%d_%T] “<br>修改bashrc 后使其生效:  source ~/.bashrc  或 .  .bashrc   </p>
 <p>6.链接<br>ln -s 源路径  目标路径        - 给源路径对应的文件在目标路径下创建一个软链接(可以看成是快捷键)<br>ln 源路径  目标路径            - 给源路径对应的文件在目标路径下创建一个硬链接</p>
 <p>8.快捷键<br>ctr + f         - 前进一个字符<br>ctr + b        - 后退一个字符<br>ctr + a        - 回到行首<br>ctr + e         - 回到行尾<br>ctr + w        - 向左删除一个单词<br>ctr + u        - 向左删除全部<br>ctr + k        - 向右删除全部<br>ctr + y        - 粘贴上次删除的内容<br>ctr + l        - 清屏  </p>
-<p>二、进程相关指令<br>1.ps指令<br>ps                        - 进程状态<br>ps -aux  或者  ps ex            - 查看进程<br>ps -aux|grep 进程名        - 查看指定进程<br>psgrep  进程名</p>
+<h3 id="二、进程相关指令"><a href="#二、进程相关指令" class="headerlink" title="二、进程相关指令"></a>二、进程相关指令</h3><p>1.ps指令<br>ps                        - 进程状态<br>ps -aux  或者  ps ex            - 查看进程<br>ps -aux|grep 进程名        - 查看指定进程<br>psgrep  进程名</p>
 <p>2.top指令<br>top                         - 动态监控进程<br>top  -p PID1,PID2,….        - 动态监控指定进程</p>
 <p>3.free指令<br>free -单位                    - 以指定单位查看内存</p>
 <p>4.kill指令</p>
 <p>kill 进程号                    - 杀死指定的进程<br>kill -1/-9/-15                - -1(HUP)不间断重启，-9(KILL)强制杀死进程,-15(TERM)正常终止进程<br>pkill  进程名                - 按名字处理进程<br>killall 进程名                - 处理名字匹配的进程</p>
 <p>uptime                    - 查看系统状态</p>
-<p>三、权限管理<br>1.user和group</p>
+<h3 id="三、权限管理"><a href="#三、权限管理" class="headerlink" title="三、权限管理"></a>三、权限管理</h3><p>1.user和group</p>
 <p>users                                     -查看当前用户<br>groupadd  分组名                            - 添加分组<br>useradd ‐G 分组列表 ‐m ‐s /bin/bash 用户名        - 创建一个用户添加到指定的分组中<br>usermod -G 分组列表 用户名                    - 修改分组<br>sudo                                        - 以管理员执行其他程序<br>su - 用户名            </p>
 
           
@@ -344,6 +922,13 @@
     
 
     
+    <div>
+      
+</div>
+    <div>
+      
+  </div>
+
 
     <footer class="post-footer">
       
@@ -381,7 +966,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我的博客">
+      <meta itemprop="name" content="往事随风">
       <meta itemprop="description" content>
       <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550763155730&di=ef8c2a5b21e76719a2cee4e81720fca3&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F012f4a582436d2a84a0e282ba6db98.jpg%401280w_1l_2o_100sh.jpg">
     </span>
@@ -409,7 +994,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-20T17:32:52+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-20T00:00:00+08:00">
                 2019-02-20
               </time>
             
@@ -472,6 +1057,13 @@
     
 
     
+    <div>
+      
+</div>
+    <div>
+      
+  </div>
+
 
     <footer class="post-footer">
       
@@ -528,9 +1120,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550763155730&di=ef8c2a5b21e76719a2cee4e81720fca3&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F012f4a582436d2a84a0e282ba6db98.jpg%401280w_1l_2o_100sh.jpg" alt="我的博客">
+              <img class="site-author-image" itemprop="image" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550763155730&di=ef8c2a5b21e76719a2cee4e81720fca3&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F012f4a582436d2a84a0e282ba6db98.jpg%401280w_1l_2o_100sh.jpg" alt="往事随风">
             
-              <p class="site-author-name" itemprop="name">我的博客</p>
+              <p class="site-author-name" itemprop="name">往事随风</p>
               <p class="site-description motion-element" itemprop="description">以梦为马，剑仗天涯</p>
           </div>
 
@@ -541,7 +1133,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -550,9 +1142,25 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -592,17 +1200,19 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">我的博客</span>
+  <span class="author" itemprop="copyrightHolder">往事随风</span>
 
   
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  
 
 
 
@@ -610,10 +1220,19 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  
 
 
 
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共2.4k字</span>
+</div>
 
         
 
@@ -657,6 +1276,8 @@
   
 
 
+  
+
 
 
 
@@ -695,6 +1316,11 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -774,6 +1400,8 @@
   
 
   
+<script type="text/javascript" color="0,0,255" opacity="0.3" zindex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
 
 <!-- 音频播放 -->
 <link rel="stylesheet" href="/dist/APlayer.min.css">

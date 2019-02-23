@@ -10,6 +10,8 @@
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 <meta name="theme-color" content="#222">
 
 
@@ -68,28 +70,31 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="系统,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="往事随风" type="application/atom+xml">
 
 
 
 
 
 
-
-
-
-
-<meta name="description" content="##1.连接云服务器 Linux指令系统： 命令名称 [命名参数] [命令对象] 一、日常操作1.cd指令       - 进入指定文件夹cd  目录     - 进入指定目录(也可以是文件夹对应的路径)               ~相对路径 — 绝对路径 cd  ..       - 返回上层目录cd  ~    - 回到根目录  ls指令        - 查看当前目录中的内容lsls  -">
+<meta name="description" content="1.连接云服务器Linux指令系统： 命令名称 [命名参数] [命令对象] 一、日常操作1.cd指令       - 进入指定文件夹cd  目录     - 进入指定目录(也可以是文件夹对应的路径)               ~相对路径 — 绝对路径 cd  ..       - 返回上层目录cd  ~    - 回到根目录  ls指令        - 查看当前目录中的内容lsls  -l/-">
+<meta name="keywords" content="系统">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux指令系统">
 <meta property="og:url" content="http://yoursite.com/2019/02/20/Linux指令系统/index.html">
 <meta property="og:site_name" content="往事随风">
-<meta property="og:description" content="##1.连接云服务器 Linux指令系统： 命令名称 [命名参数] [命令对象] 一、日常操作1.cd指令       - 进入指定文件夹cd  目录     - 进入指定目录(也可以是文件夹对应的路径)               ~相对路径 — 绝对路径 cd  ..       - 返回上层目录cd  ~    - 回到根目录  ls指令        - 查看当前目录中的内容lsls  -">
+<meta property="og:description" content="1.连接云服务器Linux指令系统： 命令名称 [命名参数] [命令对象] 一、日常操作1.cd指令       - 进入指定文件夹cd  目录     - 进入指定目录(也可以是文件夹对应的路径)               ~相对路径 — 绝对路径 cd  ..       - 返回上层目录cd  ~    - 回到根目录  ls指令        - 查看当前目录中的内容lsls  -l/-">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-21T01:21:50.445Z">
+<meta property="og:updated_time" content="2019-02-23T06:51:08.996Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux指令系统">
-<meta name="twitter:description" content="##1.连接云服务器 Linux指令系统： 命令名称 [命名参数] [命令对象] 一、日常操作1.cd指令       - 进入指定文件夹cd  目录     - 进入指定目录(也可以是文件夹对应的路径)               ~相对路径 — 绝对路径 cd  ..       - 返回上层目录cd  ~    - 回到根目录  ls指令        - 查看当前目录中的内容lsls  -">
+<meta name="twitter:description" content="1.连接云服务器Linux指令系统： 命令名称 [命名参数] [命令对象] 一、日常操作1.cd指令       - 进入指定文件夹cd  目录     - 进入指定目录(也可以是文件夹对应的路径)               ~相对路径 — 绝对路径 cd  ..       - 返回上层目录cd  ~    - 回到根目录  ls指令        - 查看当前目录中的内容lsls  -l/-">
 
 
 
@@ -160,7 +165,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">爱好吃饭睡觉</p>
+        <p class="site-subtitle">以梦为马，剑仗天涯</p>
       
   </div>
 
@@ -235,7 +240,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/Linux指令系统/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="我的博客">
+      <meta itemprop="name" content="往事随风">
       <meta itemprop="description" content>
       <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550763155730&di=ef8c2a5b21e76719a2cee4e81720fca3&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F012f4a582436d2a84a0e282ba6db98.jpg%401280w_1l_2o_100sh.jpg">
     </span>
@@ -299,10 +304,9 @@
       
 
       
-        <p>##1.连接云服务器</p>
-<p>Linux指令系统：</p>
+        <h1 id="1-连接云服务器"><a href="#1-连接云服务器" class="headerlink" title="1.连接云服务器"></a>1.连接云服务器</h1><p>Linux指令系统：</p>
 <p>命令名称 [命名参数] [命令对象]</p>
-<p>一、日常操作<br>1.cd指令       - 进入指定文件夹<br>cd  目录     - 进入指定目录(也可以是文件夹对应的路径)<br>               ~相对路径 — 绝对路径</p>
+<h3 id="一、日常操作"><a href="#一、日常操作" class="headerlink" title="一、日常操作"></a>一、日常操作</h3><p>1.cd指令       - 进入指定文件夹<br>cd  目录     - 进入指定目录(也可以是文件夹对应的路径)<br>               ~相对路径 — 绝对路径</p>
 <p>cd  ..       - 返回上层目录<br>cd  ~    - 回到根目录</p>
 <ol start="2">
 <li>ls指令        - 查看当前目录中的内容<br>ls<br>ls  -l/-lh<br>ls -a               - 隐藏文件也一起显示<br>ls -R            - 递归显示所有内容<br>ls -S/-t            - 按大小/时间排序</li>
@@ -318,13 +322,13 @@
 <p>7.history        - 显示历史指令记录<br>bashrc 配置显示时间：export  HISTTIMEFORMAT=”[%y‐%m‐%d_%T] “<br>修改bashrc 后使其生效:  source ~/.bashrc  或 .  .bashrc   </p>
 <p>6.链接<br>ln -s 源路径  目标路径        - 给源路径对应的文件在目标路径下创建一个软链接(可以看成是快捷键)<br>ln 源路径  目标路径            - 给源路径对应的文件在目标路径下创建一个硬链接</p>
 <p>8.快捷键<br>ctr + f         - 前进一个字符<br>ctr + b        - 后退一个字符<br>ctr + a        - 回到行首<br>ctr + e         - 回到行尾<br>ctr + w        - 向左删除一个单词<br>ctr + u        - 向左删除全部<br>ctr + k        - 向右删除全部<br>ctr + y        - 粘贴上次删除的内容<br>ctr + l        - 清屏  </p>
-<p>二、进程相关指令<br>1.ps指令<br>ps                        - 进程状态<br>ps -aux  或者  ps ex            - 查看进程<br>ps -aux|grep 进程名        - 查看指定进程<br>psgrep  进程名</p>
+<h3 id="二、进程相关指令"><a href="#二、进程相关指令" class="headerlink" title="二、进程相关指令"></a>二、进程相关指令</h3><p>1.ps指令<br>ps                        - 进程状态<br>ps -aux  或者  ps ex            - 查看进程<br>ps -aux|grep 进程名        - 查看指定进程<br>psgrep  进程名</p>
 <p>2.top指令<br>top                         - 动态监控进程<br>top  -p PID1,PID2,….        - 动态监控指定进程</p>
 <p>3.free指令<br>free -单位                    - 以指定单位查看内存</p>
 <p>4.kill指令</p>
 <p>kill 进程号                    - 杀死指定的进程<br>kill -1/-9/-15                - -1(HUP)不间断重启，-9(KILL)强制杀死进程,-15(TERM)正常终止进程<br>pkill  进程名                - 按名字处理进程<br>killall 进程名                - 处理名字匹配的进程</p>
 <p>uptime                    - 查看系统状态</p>
-<p>三、权限管理<br>1.user和group</p>
+<h3 id="三、权限管理"><a href="#三、权限管理" class="headerlink" title="三、权限管理"></a>三、权限管理</h3><p>1.user和group</p>
 <p>users                                     -查看当前用户<br>groupadd  分组名                            - 添加分组<br>useradd ‐G 分组列表 ‐m ‐s /bin/bash 用户名        - 创建一个用户添加到指定的分组中<br>usermod -G 分组列表 用户名                    - 修改分组<br>sudo                                        - 以管理员执行其他程序<br>su - 用户名            </p>
 
       
@@ -338,8 +342,30 @@
     
 
     
+    <div>
+      
+        
+
+      
+</div>
+    <div>
+      
+      <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------　　　　本文结束　<i class="fa fa-heart"></i>　感谢您的阅读　　　　-------------</div>
+    
+</div>
+      
+  </div>
+
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/系统/" rel="tag"><i class="fa fa-tag"></i>系统</a>
+          
+        </div>
       
 
       
@@ -360,6 +386,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/02/23/Hexo博客搭建/" rel="prev" title="Hexo博客搭建">
+                Hexo博客搭建 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -376,6 +406,32 @@
 
 
     <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
       
     </div>
   </div>
@@ -410,14 +466,23 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550763155730&di=ef8c2a5b21e76719a2cee4e81720fca3&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F012f4a582436d2a84a0e282ba6db98.jpg%401280w_1l_2o_100sh.jpg" alt="我的博客">
+              <img class="site-author-image" itemprop="image" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550763155730&di=ef8c2a5b21e76719a2cee4e81720fca3&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F012f4a582436d2a84a0e282ba6db98.jpg%401280w_1l_2o_100sh.jpg" alt="往事随风">
             
-              <p class="site-author-name" itemprop="name">我的博客</p>
+              <p class="site-author-name" itemprop="name">往事随风</p>
               <p class="site-description motion-element" itemprop="description">以梦为马，剑仗天涯</p>
           </div>
 
@@ -428,7 +493,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -437,9 +502,25 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -466,6 +547,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-连接云服务器"><span class="nav-number">1.</span> <span class="nav-text">1.连接云服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、日常操作"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、日常操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、进程相关指令"><span class="nav-number">1.0.2.</span> <span class="nav-text">二、进程相关指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、权限管理"><span class="nav-number">1.0.3.</span> <span class="nav-text">三、权限管理</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -479,17 +576,19 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">我的博客</span>
+  <span class="author" itemprop="copyrightHolder">往事随风</span>
 
   
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  
 
 
 
@@ -497,10 +596,19 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  
 
 
 
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共2.4k字</span>
+</div>
 
         
 
@@ -544,6 +652,8 @@
   
 
 
+  
+
 
 
 
@@ -582,6 +692,11 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -665,6 +780,8 @@
   
 
   
+<script type="text/javascript" color="0,0,255" opacity="0.3" zindex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
 
 <!-- 音频播放 -->
 <link rel="stylesheet" href="/dist/APlayer.min.css">
